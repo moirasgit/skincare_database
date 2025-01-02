@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>{{ product['name'] }}</h2>
+    <p>Brand: {{ product['brand'] }}</p>
+    <p>Amount: {{product['amount_ml']}} ml</p>
+    <p>Price: ${{ product['price'] }}</p>
+    <p>Category: {{ product['product_category'] }}</p>
+    
+
+    <h3>Ingredients</h3>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient['Ingredient Name'] }} - {{ ingredient['concentration'] }}%</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Skin Concerns</h3>
+    <ul>
+        {% for skin_concern in skin_concerns %}
+            <li>{{ skin_concern['Skin Concern name'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Reviews</h3>
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <p>{{ review['text'] }}</p>
+                    <p><strong>Rating:</strong> {{ review['rating'] }} / 5</p>
+                    <p><strong>Reviewed by:</strong> {{ review['name'] }}</p>
+                    <p><small>{{ review['date'] }}</small></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+
+    <a href="{{ url_for('submit_review', product_id=product['product_id']) }}">Submit Review</a>
+{% endblock %}

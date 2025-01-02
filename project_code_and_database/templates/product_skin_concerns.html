@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Skin Concerns Addressed by Products</h2>
+    <ul>
+        {% for concern in skin_concerns %}
+            <li>
+                <strong>{{ concern['Product name'] }}</strong>: {{ concern['Skin Concern name'] }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

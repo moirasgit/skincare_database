@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>All Product Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>
+                <strong>{{ ingredient['Product Name'] }}</strong>: {{ ingredient['Ingredient Name'] }} ({{ ingredient['concentration'] }}%)
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

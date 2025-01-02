@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Welcome to the Product Review App</h2>
+    <form action="{{ url_for('search') }}" method="POST">
+        <input type="text" name="query" placeholder="Search..." required>
+        
+        <!-- Dropdown to select search type -->
+        <select name="search_type" required>
+            <option value="product">Product</option>
+            <option value="skin_concern">Skin Concern</option>
+            <option value="ingredient">Ingredient</option>
+        </select>
+        
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

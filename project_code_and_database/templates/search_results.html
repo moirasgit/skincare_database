@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Search Results for "{{ query }}"</h2>
+    
+    {% if results %}
+        <ul>
+            {% for product in results %}
+                <li>
+                    <a href="{{ url_for('product_details', product_id=product['product_id']) }}">
+                        {{ product['name'] }} - {{ product['brand'] }}
+                    </a>
+                    <p>{{ product['product_category'] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}
