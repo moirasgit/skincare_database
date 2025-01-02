@@ -1,8 +1,4 @@
-Name: Modupe Bamiduro
-Student Number: 101271006
-
-COMP 3005 Project Submission
-
+Skincare Database
 
 #Database Location
 Filename: project.db
@@ -28,5 +24,3 @@ Folder: project_code_and_database
 - Flask Framework
 
 
-#Youtube link
--https://youtu.be/Ys0Y61nIJps
